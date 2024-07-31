@@ -1,5 +1,8 @@
 function handleKeyPress(event){
     const keyPressed = event.key;
+    if(keyPressed === "Escape"){
+        gameEnds();
+    }
     const showAlphabet = document.getElementById('word').innerText;
     const showAlphabetLow = showAlphabet.toLocaleLowerCase();
     if(keyPressed === showAlphabetLow){
@@ -15,7 +18,7 @@ function handleKeyPress(event){
         const newLife = life - 1;
         setTheTextElementValueById("current-life", newLife);
 
-        if(life <= 0){
+        if(newLife === 0){
             gameEnds();
         }
     }
@@ -44,4 +47,10 @@ function play(){
 function gameEnds(){
     showElementById("score");
     hideElementById("play-ground")
+    const finalScore = getValueById("current-score");
+    setTheTextElementValueById("final-score", finalScore);
+
+    const finalWord = getTextById('word');
+    const finalWordLow = finalWord.toLocaleLowerCase();
+    removeBgColor(finalWordLow);
 }

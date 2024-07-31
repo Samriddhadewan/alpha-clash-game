@@ -8,7 +8,10 @@ function getARandomAlphabet(){
     const alphabet = alphabets[index];
     return alphabet;
 }
-
+function getTextById(element){
+    const text = document.getElementById(element).innerText;
+    return text;
+}
 
 function hideElementById(elementID){
     const element = document.getElementById(elementID);
