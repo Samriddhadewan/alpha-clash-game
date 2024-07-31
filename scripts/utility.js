@@ -22,3 +22,7 @@ function setBgColorById(element){
     const theWord = document.getElementById(element);
     theWord.classList.add("bg-amber-400");
 }
+function removeBgColor(elementID){
+    const element = document.getElementById(elementID);
+    element.classList.remove("bg-amber-400")
+}
