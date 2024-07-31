@@ -26,3 +26,14 @@ function removeBgColor(elementID){
     const element = document.getElementById(elementID);
     element.classList.remove("bg-amber-400")
 }
+
+function getValueById(element){
+    const getTheElement = document.getElementById(element);
+    const elementValue = getTheElement.innerText;
+    const value = parseInt(elementValue);
+    return value;
+}
+function setTheTextElementValueById(element, value){
+    const theElement = document.getElementById(element);
+    theElement.innerText = value;
+}
